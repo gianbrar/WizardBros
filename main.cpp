@@ -8,11 +8,13 @@ save data;
 string scondierConf;
 string commandResponse;
 string saveInfo;
+string saveFile;
 ifstream save;
 ifstream headerFile;
 void enterToContinue;
 int deathCode;
 int i;
+int killNum = -1;
 bool firstCommand = true;
 bool commandUsed = false;
 
@@ -53,6 +55,26 @@ int helpScondier() {
 int codeScondier() {
 	cout << "You have just activated the CODE scondier. Please convert your binary code into a number.\nCODES:\n0: Made a stupid mistake\n1: Died of a monster with a level of 0-3\n2: Died of a monster with a level of 4-7\n3: Died of a monster with a level of 8-11\n4: Died of a monster with a level of 12-15\n5: Died of a monster with a level of 16-19\n6: Died of a monster with a level of 20\n7: Died of a BASEmAGE (Level 0-3)\n8: Died of an eXmAGE (Level 4-7)\n9: Died of an @eXmAGE (Level 8-11)\n10: Died of a sKONKmAGE (Level 12-15)\n11: Died of an @sKONKmAGE (Level 16-19)\n12: Died of the SUPREME MAGE (Level 20)\n13: Committed suicide [PRESS ENTER TO CONTINUE]";
 	cin >> enterToContinue;
+	return 0;
+}
+int saveScondier() {
+	cout << "You have just activated the SAVE scondier. Save game? (y/n)";
+	cin >> scondierConf;
+	if (scondierConf == "y") {
+		saveFile = "#include <string>\nusing namespace std;\n\nclass save {\n    string name = "  + data.name + ";\n    firstGame = " + data.firstGame + ";";
+		save >> saveFile;
+		killNum = -1;
+	}
+	else if (scondierConf == "n") {
+		cout << "Well silly, then why did you activate this particular scondier in the first place? Pssshhhhhh...";
+		killNum = -1;
+	}
+	else {
+		if (killNum == 0) {
+			cout << "Error! Please try again!";
+			saveScondier();
+		}
+	}
 	return 0;
 }
 int commandScondier() {
@@ -131,7 +153,6 @@ int main() {
 			cout << "Help scondier not activated!";
 		}
 	}
-
 	cout << "Activate COMMAND scondier or STORY scondier? (c or s)";
 	cin >> scondierConf;
 	if (scondierConf == "c") {
