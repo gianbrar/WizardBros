@@ -14,6 +14,7 @@ ifstream headerFile;
 void enterToContinue;
 int deathCode;
 int i;
+int chapter;
 int killNum = -1;
 bool firstCommand = true;
 bool commandUsed = false;
@@ -61,7 +62,7 @@ int saveScondier() {
 	cout << "You have just activated the SAVE scondier. Save game? (y/n)";
 	cin >> scondierConf;
 	if (scondierConf == "y") {
-		saveFile = "#include <string>\nusing namespace std;\n\nclass save {\n    string name = "  + data.name + ";\n    firstGame = " + data.firstGame + ";";
+		saveFile = "#include <string>\nusing namespace std;\n\nclass save {\n    string name = " + data.name + ";\n    firstGame = " + data.firstGame + ";\n    chapter = " + data.chapter + ";" + "\n};";
 		save >> saveFile;
 		killNum = -1;
 	}
@@ -112,8 +113,93 @@ int commandScondier() {
 	}
 	return 0;
 }
+int accessDenied() {
+	cout << "Error! You do not have access to that chapter!";
+	return 0;
+}
+int chapterZero() {
+	return 0;
+}
+int chapterOne() {
+	return 0;
+}
+int chapterTwo() {
+	return 0;
+}
+int chapterThree() {
+	return 0;
+}
+int chapterFour() {
+	return 0;
+}
+int chapterFive() {
+	return 0;
+}
+int chapterSix() {
+	return 0;
+}
+int chapterSeven() {
+	return 0;
+}
 int storyScondier() {
-
+	cout << "Please select chapter.";
+	cin >> chapter;
+	if (chapter == 0) {
+		cout << "CHAPTER 0: 43 6f 6e 66 75 73 69 6f 6e 20 43 61 66 65 74 65 72 69 61";
+		chapterZero();
+	}
+	else if (chapter == 1) {
+		cout << "CHAPTER 1: Delicious Dumble Dorzers";
+		chapterOne();
+	}
+	else if (chapter == 2) {
+		if (data.chapter > 1) {
+			chapterTwo();
+		}
+		else {
+			accessDenied();
+		}
+	}
+	else if (chapter == 3) {
+		if (data.chapter > 2) {
+			chapterThree();
+		}
+		else {
+			accessDenied();
+		}
+	}
+	else if (chapter == 4) {
+		if (data.chapter > 3) {
+			chapterFour();
+		}
+		else {
+			accessDenied();
+		}
+	}
+	else if (chapter == 5) {
+		if (data.chapter > 4) {
+			chapterFive();
+		}
+		else {
+			accessDenied();
+		}
+	}
+	else if (chapter == 6) {
+		if (data.chapter > 5) {
+			chapterSix();
+		}
+		else {
+			accessDenied();
+		}
+	}
+	else if (chapter == 7) {
+		if (data.chapter > 6) {
+			chapterSeven();
+		}
+		else {
+			accessDenied();
+		}
+	}
 	return 0;
 }
 
