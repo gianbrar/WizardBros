@@ -32,7 +32,7 @@ int nameScondier() {
 }
 int deathScondier() {
 	cout << "CONGRATULATIONS! DEATH scondier has been activated. You are dead.";
-	cout << "REASON FOR DEATH: " << deathCode << "\nPlease consult CODE scondier for translation of code.";
+	cout << "REASON FOR DEATH: " << deathCode << "\nPlease consult CODE scondier for translation of death code.";
 	exit(EXIT_SUCCESS);
 	return 0;
 }
@@ -40,10 +40,11 @@ int helpScondier() {
 	cout << "You have just activated HELP scondier.\nActivate asssistance for scondiers (y) or for story? (n)";
 	cin >> scondierConf;
 	if (scondierConf == "y") {
-		cout << "Here are the following scondier activation commands:\nco: Activates CODE scondier\nc: Activates COMMAND scondier\n";
+		cout << "Here are the following scondier activation commands:\nco: Activates CODE scondier\nc: Activates COMMAND scondier\nd: Activates DEATH scondier [PRESS ENTER TO CONTIUE]";
+        cin >> enterToContinue;
 	}
 	else if (scondierConf == "n") {
-
+        cout << "Actual story coming soon!";
 	}
 	else {
 		cout << "Not an option! DIE FOOL!";
@@ -121,6 +122,17 @@ int chapterZero() {
 	return 0;
 }
 int chapterOne() {
+    cout << "From a distance, a penguin looks at you. Though one would expect a normal penguin, this penguin is in fact something else. [PRESS ENTER TO CONTINUE]";
+    cin >> enterToContinue;
+    cout << "FOR THIS PENGUIN WAS A WIZARD!1!1!1!!11!!1 (spooky!) The penguin suddenly dies due to a raging Swiss Cheese. This shall be explained at a later date with time shenanagins. [PRESS ENTER TO CONTINUE]";
+	cin >> enterToContinue;
+	cout << "Regardless of the previous events, which you think to be a form of strange folly whose creator deserves death an eternal suffering, you find yourself in your room. [PRESS ENTER TO STOP THESE STUPID MESSAGES]":
+    cin >> enterToContinue;
+    cout << "NO!!! Despite the silliness of the penguin wizards of yonder, you take a rather odd fondness towards the [PRESS ENTER TO CONTINUE] boxes. Speaking of, [PRESS ENTER TO CONTINUE]";
+    cin >> enterToContinue;
+    cout << "Admittedly, it was quite annoying that time. And besides that, you yearn for user input. After all, if not for user input, this would simply be a rip-off of Homestuck! [PRESS ENTER TO CONTINUE]";
+    cin >> enterToContinue;
+    cout << "Suddenly, for reasons relating to plot convenience, a DIABLERIE TYPE monster breaks through your ceiling.";
 	return 0;
 }
 int chapterTwo() {
