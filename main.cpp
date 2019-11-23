@@ -18,12 +18,17 @@ int chapter;
 int killNum = -1;
 bool firstCommand = true;
 bool commandUsed = false;
+bool enemyDefeated;
 
 int nameScondier() {
 	cout << "You have just activated the NAME scondier. The name is changeable.";
 	cin >> data.name;
 	if (data.name == "changeable") {
 		cout << "Level 20 mage bro gives you a thumbs up. Finally, someone who understands his godly sense of humor."
+	}
+	else if (data.name == "asdfdsafdsafdsbcjkdsahfvjdsyalfhdkjfhauliliuqewiuarew789ar78w3794782") {
+		cout << "What have you done? Are you a bug tester or just trying to break the game? Perhaps you entered this code by complete accident, but I suggest you never do so again. (REACTIVATING NAME SCONDIER!)";
+		nameScondier();
 	}
 	else {
 		cout << "Name registered as " << data.name;
@@ -63,7 +68,7 @@ int saveScondier() {
 	cout << "You have just activated the SAVE scondier. Save game? (y/n)";
 	cin >> scondierConf;
 	if (scondierConf == "y") {
-		saveFile = "#include <string>\nusing namespace std;\n\nclass save {\n    string name = " + data.name + ";\n    firstGame = " + data.firstGame + ";\n    chapter = " + data.chapter + ";" + "\n};";
+		saveFile = "#include <string>\nusing namespace std;\n\nclass save {\n    string name = " + data.name + ";\n    firstGame = " + data.firstGame + ";\n    chapter = " + data.chapter + ";\n    int maxHP = " +  data.maxHP + ";\n    int tempHP = " + data.tempHP + ";" + "\n};";
 		save >> saveFile;
 		killNum = -1;
 	}
@@ -118,6 +123,9 @@ int accessDenied() {
 	cout << "Error! You do not have access to that chapter!";
 	return 0;
 }
+int attackScondier() {
+	return 0;
+}
 int chapterZero() {
 	return 0;
 }
@@ -126,13 +134,27 @@ int chapterOne() {
     cin >> enterToContinue;
     cout << "FOR THIS PENGUIN WAS A WIZARD!1!1!1!!11!!1 (spooky!) The penguin suddenly dies due to a raging Swiss Cheese. This shall be explained at a later date with time shenanagins. [PRESS ENTER TO CONTINUE]";
 	cin >> enterToContinue;
-	cout << "Regardless of the previous events, which you think to be a form of strange folly whose creator deserves death an eternal suffering, you find yourself in your room. [PRESS ENTER TO STOP THESE STUPID MESSAGES]":
+	cout << "Regardless of the previous events, which you think to be a form of strange folly whose creator deserves death an eternal suffering, you find yourself in your room. [PRESS ENTER TO STOP THESE STUPID MESSAGES]";
     cin >> enterToContinue;
     cout << "NO!!! Despite the silliness of the penguin wizards of yonder, you take a rather odd fondness towards the [PRESS ENTER TO CONTINUE] boxes. Speaking of, [PRESS ENTER TO CONTINUE]";
     cin >> enterToContinue;
     cout << "Admittedly, it was quite annoying that time. And besides that, you yearn for user input. After all, if not for user input, this would simply be a rip-off of Homestuck! [PRESS ENTER TO CONTINUE]";
     cin >> enterToContinue;
-    cout << "Suddenly, for reasons relating to plot convenience, a DIABLERIE TYPE monster breaks through your ceiling.";
+    cout << "Suddenly, for reasons relating to plot convenience, a level one DIABLERIE TYPE monster breaks through your ceiling.\nWhat will you do?\na: Engage attack scondier\nP: Procure delicious meats\nT: Engage in time shenanigans";
+    cin >> scondierConf;
+    while (enemyDefeated != true) {
+    	if (scondierConf == "a") {
+    		attackScondier();
+    	}
+    	else if (scondierConf == "A") {
+    		cout << "You clumsy buffoon. Surely after this point you're aware that scondier activation requires a lowercase character!";
+    		deathCode = 00000000;
+    		deathScondier();
+    	}
+    	else if (scondierConf == "P" || scondierConf == "p") {
+    		cout << "You procure delicious meats, despite the monster continuing to wreak havoc on your room. You should probably do something before it destroys everything, including you.";
+    	}
+    }
 	return 0;
 }
 int chapterTwo() {
@@ -225,7 +247,7 @@ int main() {
 	headerFile >> saveInfo;
 	cout << "WIZARD BROS! (press enter to continue)";
 	cin >> enterToContinue;
-	if (data.name == "temp") {
+	if (data.name == "asdfdsafdsafdsbcjkdsahfvjdsyalfhdkjfhauliliuqewiuarew789ar78w3794782") {
 		cout << "Activate NAME scondier? (n is activation module)";
 		cin >> scondierConf;
 		if (scondierConf == "n") {
